@@ -1,0 +1,241 @@
+Float
+ClrHome
+0→T:0→U
+Lbl 0
+Menu("        ALGEBRA V2        ","LINEAR SYSTEMS",A,"LINEAR EQUATIONS",B,"PYTHAGOREAN THEOREM",C,"SOLVING QUADRATICS",D,"DEG/MIN/SEC",E,"Made by Mike Borgesi",F,"EXIT",CL
+Lbl CL
+ClrHome
+Stop
+Lbl A
+Menu("  SOLVING LINEAR SYSTEMS  ","LINEAR SYSTEMS",A1,"",0
+Lbl B
+Menu("       LINEAR SLOPE       ","LINEAR EXPRESSION",B1,"SOLVE FOR X",B2,"Y-INTERCEPT",B3,"",0
+Lbl C
+Menu("    PYTHAGOREAN THEOREM    ","HYPOTENUSE",C1,"MISSING LEG",C2,"ANGLES IF MODE-DEGREES",C3,"ANGLES IF MODE-RADIANS",C4,"",0
+Lbl D
+Menu("     SOLVING QUADRATICS     ","QUADRATIC EQUATION",D1,"",0
+Lbl E
+Menu("            DMS            ","SOLVING DEG/MIN/SEC",E1,"",0
+
+
+
+Lbl A1
+ClrHome:0→M
+Disp "      LINEAR SYSTEMS
+Input "",Str0
+Goto 4:Lbl 5
+S→A:T→B:U→C:V→D
+Input "",Str0
+Goto 4:Lbl 6
+S→E:T→F:U→G:V→H
+If C=0 and G=0
+Goto 1
+Input "",Str0
+Goto 4:Lbl 7
+S→I:T→J:U→K:V→L:Lbl 0
+"[[A,B,C][E,F,G][I,J,K]]*[[D][H][L→u
+u:Ans(1,1→X
+u:Ans(2,1→Y
+u:Ans(3,1→Z
+Pause {X,Y,ZFrac
+Goto 3:Lbl 1
+"            MANY SOLUTIONS→Str4
+"              NO SOLUTIONS→Str5
+If not(AF-BE
+Then
+If B=0 and F=0
+Then
+If A/D=E/H
+Pause Str4
+If A/D≠E/H
+Pause Str5
+Goto 3
+End
+If A=0 and E=0
+Then
+If B/D=F/H
+Disp Str4
+If B/D≠F/H
+Disp Str5
+Goto 3
+End
+If A/B=E/F
+Then
+If D/B≠H/F
+Pause Str5
+If A/E=B/F and B/F=D/H
+Pause Str4
+Goto 3
+End:End
+"[[A,B][E,F]]*[[D][H→u
+u:Ans(1,1→X
+u:Ans(2,1→Y
+u:{X,Y
+Pause {X,YFrac:Goto 3
+Lbl 4
+DelVar L₁
+inString(Str0,"="→X
+sub(Str0,1,X)+"0→Str1
+sub(Str0,X+1,length(Str0)-X)+"=0→Str2
+For(θ,1,2)
+If θ=1
+Str1→Str0
+If θ=2
+Str2→Str0
+If Str0="X
+"1X+0Y+0Z→Str0
+If sub(Str0,1,1)="X
+"1"+Str0→Str0
+If sub(Str0,1,1)="Y
+"0X+1"+Str0→Str0
+If sub(Str0,1,1)="Z
+"0X+0Y+1"+Str0→Str0
+If sub(Str0,1,2)="­X
+"­1"+sub(Str0,2,length(Str0)-1→Str0
+If sub(Str0,1,2)="­Y
+"0X-1"+sub(Str0,2,length(Str0)-1→Str0
+If sub(Str0,1,2)="­Z
+"0X+0Y-1"+sub(Str0,2,length(Str0)-1→Str0
+If not(inString(Str0,"X
+"0X+"+Str0→Str0
+If inString(Str0,"+Y",1
+Then
+inString(Str0,"+Y→S
+sub(Str0,1,S)+"1"+sub(Str0,S+1,length(Str0)-S→Str0:End
+If inString(Str0,"-Y
+Then
+inString(Str0,"-Y→S
+sub(Str0,1,S)+"1"+sub(Str0,S+1,length(Str0)-S→Str0:End
+If inString(Str0,"+Z",1
+Then
+inString(Str0,"+Z→S
+sub(Str0,1,S)+"1"+sub(Str0,S+1,length(Str0)-S→Str0:End
+If inString(Str0,"-Z",1
+Then
+inString(Str0,"-Z"→S
+sub(Str0,1,S)+"1"+sub(Str0,S+1,length(Str0)-S→Str0:End
+If not(inString(Str0,"Y
+Then
+inString(Str0,"X→S
+sub(Str0,1,S)+"+0Y"+sub(Str0,S+1,length(Str0)-S→Str0:End
+If not(inString(Str0,"Z
+Then
+inString(Str0,"Y→S
+sub(Str0,1,S)+"+0Z"+sub(Str0,S+1,length(Str0)-S→Str0
+End
+inString(Str0,"Z→Q
+inString(Str0,"=→R
+If 1<(R-Q
+Then
+sub(Str0,1,Q)+sub(Str0,R,length(Str0)-R+1)+"-(0"+sub(Str0,Q+1,R-Q-1)+")→Str0
+End
+inString(Str0,"X→S
+inString(Str0,"Y→T
+inString(Str0,"Z→U
+inString(Str0,"=→V
+{expr(sub(Str0,1,S-1)),expr("0"+sub(Str0,S+1,T-S-1)),expr("0"+sub(Str0,T+1,U-T-1)),expr(sub(Str0,V+1,length(Str0)-V→L₁
+If θ=1:L₁→L₂
+If θ=2:L₁→L₃
+End
+L₂-L₃→L₁
+L₁(1→S:L₁(2→T
+L₁(3→U:L₁(4→V
+M+1→M
+If M=1:Goto 5
+If M=2:Goto 6
+If M=3:Goto 7
+Lbl 3
+DelVar Str0DelVar Str1DelVar Str2DelVar Str4DelVar Str5
+Stop
+
+Lbl B1
+Disp "Slope= (Y2-Y1)/(X2-X1)"
+Input "x₁=",A
+Input "y₁=",B
+Input "x₂=",C
+Input "y₂=",D
+ClrHome
+(D-B)/(C-A)→F
+F(A)→Z
+B-Z→J
+Disp "Y=Mx+B"
+Disp "     M=",F,FFrac
+Disp "     B=",J,JFrac
+Stop
+
+Lbl B2
+Disp "Solve for X"
+Prompt Y,M,B
+Y-B→J
+J/M→T
+Disp "X=",T
+Stop
+
+Lbl B3
+Disp "Solve for B"
+Prompt X,Y,M
+M(X)→F
+Y-F→Z
+Disp "B=",Z,ZFrac
+Stop
+
+Lbl C1
+Disp "Find Hypotenuse= C"
+Disp "A²+B²=C²"
+Prompt A,B
+√(A²+B²)→Z
+Disp "C=",Z
+(Z)²→V
+Disp "C= √(",V
+Stop
+
+Lbl C2
+Disp "Find Missing Leg B"
+Disp "√(C²-A²)"
+Prompt A,C
+√(C²-A²)→Z
+Disp "B=",Z
+(Z)²→V
+Disp "B= √(",V
+Stop
+
+Lbl C3
+Degree
+Disp "Find Missing Angles"
+Prompt A,C
+sin(A/C)→G
+cos(A/C)→F
+G→H
+F→L
+ClrHome
+Disp "Angles In Degrees=",H,L
+Stop
+
+Lbl C4
+Radian
+Disp "Find Missing Angles"
+Prompt A,C
+sin(A/C)→G
+cos(A/C)→F
+G*(180/π)→H
+F*(180/π)→L
+ClrHome
+Disp "Angles In Degrees=",H,L
+Stop
+
+Lbl D1
+Prompt A,B,C
+(­B+√(B²-4AC))/(2A)→X
+(­B-√(B²-4AC))/(2A)→Y
+Disp "Roots =",X,Y
+Stop
+
+Lbl E1
+Disp "Degrees= X"
+Prompt X
+X→Z
+Disp "DMS=",ZDMS
+Stop
+
+End
+Pause
