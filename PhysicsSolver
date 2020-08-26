@@ -1,0 +1,88 @@
+Float
+ClrHome
+0→T:0→U
+Lbl 0
+Menu("     Physics Equations      ","Velocity/Acceleration",A,"Force",B,"Momentum",C,"Energy",D,"Work",E,"Power",F,"EXIT",CL
+Lbl CL
+ClrHome
+Stop
+
+Lbl A
+Menu("   Velocity/Acceleration    ","Average Speed",A1,"Average Velocity",A2,"Acceleration",A3,"",0
+
+Lbl D
+Menu("          Energy            ","Potential Energy",D1,"Kinetic Energy",D2,"",0
+
+Lbl A1
+Disp "Average Speed= D/T"
+Prompt D,T
+D/T→S
+Disp "S=",S
+Disp "S=",AnsFrac
+Stop
+
+Lbl A2
+Disp "Average Velocity= (V₂+V₁)/2"
+Disp "^ is = X+Y/2"
+Prompt X,Y
+(X+Y)/2→V
+Disp "V=",V
+Disp "V=",AnsFrac
+Stop
+
+Lbl A3
+Disp "Acceleration= V₂-V₁/T₂-T₁"
+Disp "^ is = X-Y/Z-V"
+Prompt X,Y,Z,V
+(X-Y)/(Z-V)→A
+Disp "A=",A 
+Disp "A=",AnsFrac
+Stop
+
+Lbl B
+Disp "Force= MA"
+Prompt M,A
+M*A→F
+Disp "F=",F 
+Stop
+
+Lbl C
+Disp "Momentum= MV"
+Prompt M,V
+M*V→P
+Disp "P=",P 
+Stop
+
+Lbl D1
+Disp "Potential Energy= M*(9.8)*H"
+Prompt M,H
+M*(9.8)*H→P
+Disp "P=",P
+Stop
+
+Lbl D2
+Disp "Kinetic Energy= (1/2)*M*(V)²"
+Prompt M,V
+(12)M*(V)²→K
+Disp "K=",K
+Stop
+
+Lbl E
+Disp "Work= F*D"
+Prompt F,D
+F*D→W
+Disp "W=",W
+Stop
+
+Lbl F
+Disp "Power= W/T₂-T₁"
+Disp "^ is = W/(X-Y)"
+Prompt W,X,Y
+W/(X-Y)→P
+Disp "P=",P
+Disp "P=",AnsFrac
+Stop
+
+
+End
+Pause
