@@ -1,0 +1,99 @@
+Float
+ClrHome
+0→T:0→U
+Lbl 0
+Menu(" Fundamentals of Math ","Simplify Radical",A,"Distance and Mid Point",B,"Pythagorean theorem",C,"Rad/Deg",D,"Made by Mike Borgesi",F,"EXIT",CL
+Lbl CL
+ClrHome
+Stop
+Lbl A
+Menu("   Simplify Any Radical   ","Simplify",A1,"",0
+Lbl B
+Menu("   Distance and Mid Point   ","Distance",B1,"Midpoint",B2,"",0
+Lbl C
+Menu("   Pythagorean theorem   ","Hypotenuse",C1,"Missing Leg",C2,"",0
+Lbl D
+Menu("   Convert Radians/Degrees   ","Convert Rads",D1,"Convert Deg",D2,"",0
+
+Lbl A1
+ClrHome
+Disp "Simplify Radical"
+Disp "√(X)"
+Input "X=",X
+iPart(√(X)+1)→A
+Lbl 1
+If fPart(X/A²)=0
+Then
+Goto 2
+Else
+(A-1)→A
+Goto 1
+Lbl 2
+ClrHome
+Disp "ANSWER X√(N)"
+Disp "X=",A
+Disp "N=",X/A²
+Stop
+
+Lbl B1
+1→D
+Goto 4
+Lbl B2
+2→D
+Lbl 4
+Input "X1=",X
+Input "Y1=",Y
+Input "X2=",S
+Input "Y2=",T
+If D=1
+Then
+√((T-Y)^2+(S-X)^2)→W
+Disp "DISTANCE BETWEEN POINTS=",W
+Disp "OR"
+Disp "THE SQUARE ROOT OF",(T-Y)^2+(S-X)^2
+Stop
+Else
+(X+S)/2→N
+(Y+T)/2→O
+Disp "MIDPOINT=(X,Y)"
+Disp "X=",N
+Disp "Y=",O
+Lbl 3
+Stop
+
+Lbl C1
+Disp "Find Hypotenuse = C"
+Disp "A²+B²=C²"
+Prompt A,B
+√(A²+B²)→Z
+Disp "C=",Z
+(Z)²→V
+Disp "C= √(",V
+Stop
+
+Lbl C2
+Disp "Find Missing Leg B"
+Disp "√(C²-A²)"
+Prompt A,C
+√(C²-A²)→Z
+Disp "B=",Z
+(Z)²→V
+Disp "B= √(",V
+Stop
+
+Lbl D1
+Disp "Input Radian as X"
+Prompt X
+X*57.2957795→A
+Disp "Deg=",A
+Stop
+
+Lbl D2
+Disp "Input Degree as X"
+Prompt X
+X*(π/180)→A
+Disp "Rad=",A
+Stop
+
+End
+Pause
