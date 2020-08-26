@@ -1,0 +1,59 @@
+Float
+ClrHome
+0→T:0→U
+Lbl 0
+Menu("    Solve For Unit Circle   ","Unit Circle Values",A,"Trig Values",B,"Made by Mike Borgesi",C,"EXIT",CL
+Lbl CL
+ClrHome
+Stop
+Lbl A
+Menu("   All Unit Circle Values   ","Values",A1,"",0
+Lbl B
+Menu("   Values Of Trig Prop.   ","Sin/Csc",B1,"Cos/Sec",B2,"Tan/Cot",B3,"",0
+
+Lbl A1
+Disp "Qd1: 0, π/6, π/4,"
+Disp "     π/3, π/2"
+Disp "Qd2: 2π/3, 3π/4,"
+Disp "     5π/6, π"
+Disp "Qd3: 7π/6, 5π/4,"
+Disp "     4π/3, 3π/2"
+Disp "Qd4: 5π/3, 7π/4,"
+Disp "     11π/6, 2π"
+Stop
+
+Lbl B1
+Disp "Input Radians For X"
+Prompt X
+sin(X)→A
+(1/sin(X))→B
+Disp "sin=",A
+Disp AFrac
+Disp "csc=",B
+Disp BFrac
+Stop
+
+Lbl B2
+Disp "Input Radians For X"
+Prompt X
+cos(X)→A
+(1/cos(X))→B
+Disp "cos=",A
+Disp AFrac
+Disp "sec=",B
+Disp BFrac
+Stop
+
+Lbl B3
+Disp "Input Radians For X"
+Prompt X
+tan(X)→A
+(1/tan(X))→B
+Disp "tan=",A
+Disp AFrac
+Disp "cot=",B
+Disp BFrac
+Stop
+
+End
+Pause
