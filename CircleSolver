@@ -1,0 +1,61 @@
+Float
+ClrHome
+0→T:0→U
+Lbl 0
+Menu("       Circle Solver      ","ARC LENGTH",A,"AREA OF SECTOR",B,"EQUATION OF CIRCLE",C,"CIRCUMFERENECE OF CIRCLE",D,"AREA OF CIRCLE",E,"EXIT",CL
+Lbl CL
+ClrHome
+Stop
+Lbl A
+Menu("        ARC LENGTH        ","ARC IN DEGREES",A1,"",0
+Lbl B
+Menu("      AREA OF SECTOR      ","AREA OF SECTOR IN DEGREES",B1,"",0
+Lbl C
+Menu("    EQUATION OF CIRCLE    ","EQUATION OF CIRCLE",C1,"",0
+Lbl D
+Menu("  CIRCUMFERENECE OF CIRCLE ","CIRCUMFERENECE OF CIRCLE",D1,"",0
+Lbl E
+Menu("      AREA OF CIRCLE       ","AREA OF CIRCLE",E1,"",0
+
+Lbl A1
+Disp "Arc Length= 2πR(θ/360)"
+Prompt R,θ
+2πR(θ/360)→A
+Disp "A=",A
+Stop
+
+Lbl B1
+Disp "Sector Area= π(R)²(θ/360)"
+Prompt R,θ
+π(R)²(θ/360)→A
+Disp "A=",A
+Stop
+
+Lbl C1
+Disp "AX²+AY²+BX+CY=D"
+Prompt A,B,C,D
+B/(­2A)→H
+C/(­2A)→K
+√((4AD+C²+B²)/(4A²))→R
+Disp "(X-H)+(Y-K)=R²"
+Disp "H=",HFrac,"K=",KFrac,"R=",RFrac
+Goto 9
+Lbl 9
+Stop
+
+Lbl D1
+Disp "C=2πR"
+Prompt R
+2πR→C
+Disp "C=",C
+Stop
+
+Lbl E1
+Disp "A=π(R)²"
+Prompt R
+π(R)²→A
+Disp "A=",A
+Stop
+
+End
+Pause
